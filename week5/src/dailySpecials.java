@@ -26,12 +26,12 @@ public class dailySpecials {
 
         while (!weekDay) {
             //can do individual special.equal cases or do a specials.matches() for a range or cases
-            if (specials.matches("Saturday|Sunday")) {
+            if (specials.matches("Saturday|Sunday")) { //if input is weekend
                 System.out.println("Please enter a weekday, not weekend!");
                 specials = input.next();
             } else if (specials.equals("Monday") || specials.equals("Tuesday") || specials.equals("Wednesday") || specials.equals("Thursday") ||specials.equals("Friday")) {
-                weekDay = true;
-            } else {
+                weekDay = true; //if valid input, then make condition of while loop true to escape
+            } else { //if not even a day, prompt to enter a proper input
                 System.out.println("Please enter a proper weekday!");
                 specials = input.next();
             }
@@ -74,7 +74,7 @@ public class dailySpecials {
         int order = -1; //initialize out of scope to meet loop condition
         double total;
 
-        while (order < 0 || order > 1000) {
+        while (order < 0 || order > 1000) { //make sure the order is a proper value
             System.out.printf("\nHow many %ss would you like to order?", coffee);
             order = input.nextInt();
             if (order < 0 || order > 1000) {
@@ -82,9 +82,9 @@ public class dailySpecials {
             }
         }
 
-        if (order == 0) {
+        if (order == 0) { //if-else statement for if the order is 0 or more than 0
             System.out.println("Looks like you don't like " + coffee + "s! So sad!!!");
-        } else {
+        } else {//different statements for wording if order is 1 or more than 1
             if (order==1) {System.out.printf("Looks like you will be ordering %d %s today!", order, coffee);}
             else {System.out.printf("Looks like you will be ordering %d %ss today!", order, coffee);}
             total = order * price;
