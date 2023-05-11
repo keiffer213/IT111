@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 public class kiloConverter extends JFrame {
-
     JPanel panel;
     JLabel messageLabel;
     JTextField kiloTextField;
